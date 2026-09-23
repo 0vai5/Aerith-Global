@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const links = [
   { label: "What we do", href: "#pillars" },
@@ -11,10 +11,24 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-50 flex justify-center px-4 pt-0 transition-[padding] duration-300 ease-out data-[scrolled=true]:pt-3" data-scrolled={scrolled}>
+      <div
+        className={`flex w-full items-center justify-between transition-all duration-300 ease-out ${
+          scrolled
+            ? "max-w-2xl rounded-full border border-border/60 bg-background/60 px-5 py-2.5 shadow-lg shadow-foreground/5 backdrop-blur-xl"
+            : "max-w-6xl border-b border-border bg-background/90 px-6 py-4 backdrop-blur"
+        }`}
+      >
         {/* Desktop logo — real mark */}
         <Link
           href="/"
@@ -22,11 +36,11 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/aerith-icon.png"
+            src={!scrolled ? "/aerith-icon.png" : "/aerith-icon-wordmark.png"}
             alt="Aerith Global"
-            width={128}
-            height={128}
-            // className="h-16 w-16"
+            width={scrolled ? 32 : 128}
+            height={scrolled ? 32 : 128}
+            className="transition-all duration-300"
             priority
           />
         </Link>
@@ -37,14 +51,13 @@ export function Navbar() {
           className="flex items-center gap-2 md:hidden"
           onClick={() => setOpen(false)}
         >
-           <Image
+          <Image
             src="/aerith-icon-wordmark.png"
             alt="Aerith Global"
             width={32}
             height={32}
             priority
           />
-          
         </Link>
 
         {/* Desktop nav */}
@@ -60,7 +73,7 @@ export function Navbar() {
           ))}
           <Link
             href="#contact"
-            className="rounded-md bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+            className="rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
           >
             Request a quote
           </Link>
@@ -69,7 +82,7 @@ export function Navbar() {
         {/* Mobile toggle */}
         <button
           type="button"
-          className="flex h-9 w-9 items-center justify-center rounded-md border border-border md:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-border md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -94,9 +107,13 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu panel */}
+      {/* Mobile menu panel — anchored under the capsule/bar, not inside it */}
       {open && (
-        <nav className="flex flex-col gap-1 border-t border-border px-6 py-4 md:hidden">
+        <nav
+          className={`absolute left-4 right-4 top-full mt-2 flex flex-col gap-1 rounded-2xl border border-border bg-background/95 px-6 py-4 shadow-lg backdrop-blur-xl md:hidden ${
+            scrolled ? "max-w-2xl" : "max-w-6xl"
+          }`}
+        >
           {links.map((link) => (
             <Link
               key={link.href}
@@ -109,7 +126,7 @@ export function Navbar() {
           ))}
           <Link
             href="#contact"
-            className="mt-2 rounded-md bg-primary px-5 py-2 text-center text-sm font-medium text-primary-foreground"
+            className="mt-2 rounded-full bg-primary px-5 py-2 text-center text-sm font-medium text-primary-foreground"
             onClick={() => setOpen(false)}
           >
             Request a quote

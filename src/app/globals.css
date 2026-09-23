@@ -139,6 +139,15 @@
   }
 }
 
+@keyframes beam-travel {
+  from {
+    stroke-dashoffset: 1400;
+  }
+  to {
+    stroke-dashoffset: -220;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
