@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -14,12 +15,36 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          {/* Logo placeholder — swap for the actual mark/wordmark image when ready */}
-          <span className="h-8 w-8 rounded-full bg-primary" aria-hidden="true" />
-          <span className="font-heading text-lg text-foreground">
-            Aerith Global
-          </span>
+        {/* Desktop logo — real mark */}
+        <Link
+          href="/"
+          className="hidden items-center gap-2 md:flex"
+          onClick={() => setOpen(false)}
+        >
+          <Image
+            src="/aerith-icon.png"
+            alt="Aerith Global"
+            width={128}
+            height={128}
+            // className="h-16 w-16"
+            priority
+          />
+        </Link>
+
+        {/* Mobile logo — placeholder until the mobile mark is provided */}
+        <Link
+          href="/"
+          className="flex items-center gap-2 md:hidden"
+          onClick={() => setOpen(false)}
+        >
+           <Image
+            src="/aerith-icon-wordmark.png"
+            alt="Aerith Global"
+            width={32}
+            height={32}
+            priority
+          />
+          
         </Link>
 
         {/* Desktop nav */}
@@ -62,7 +87,7 @@ export function Navbar() {
             />
             <span
               className={`absolute bottom-0 left-0 h-[1.5px] w-full bg-foreground transition-transform ${
-                open ? "translate-y-[-6.5px] -rotate-45" : ""
+                open ? "translate-y-[6.5px] -rotate-45" : ""
               }`}
             />
           </span>
