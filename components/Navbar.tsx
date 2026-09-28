@@ -8,6 +8,7 @@ const links = [
   { label: "What we do", href: "#pillars" },
   { label: "Process", href: "#process" },
   { label: "Industries", href: "#industries" },
+  { label: "Products", href: "#products" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -26,8 +27,8 @@ export function Navbar() {
           <Image
             src="/aerith-icon.png"
             alt="Aerith Global"
-            width={128}
-            height={128}
+            width={200}
+            height={200}
             priority
           />
         </Link>
@@ -41,8 +42,8 @@ export function Navbar() {
           <Image
             src="/aerith-icon-wordmark.png"
             alt="Aerith Global"
-            width={32}
-            height={32}
+            width={40}
+            height={40}
             priority
           />
         </Link>

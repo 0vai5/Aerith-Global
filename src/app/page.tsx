@@ -3,6 +3,8 @@ import { Hero } from "@/components/Hero";
 import { Industries } from "@/components/Industries";
 import { Pillars } from "@/components/Pillars";
 import { Process } from "@/components/Process";
+import { Products } from "@/components/Products";
+import { FAQ } from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
       <Pillars />
       <Process />
       <Industries />
+      <Products />
+      <FAQ />
       <ContactStrip />
     </main>
   );
