@@ -6,10 +6,10 @@ export function Hero() {
       <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-20 md:pt-28">
         <div className="max-w-2xl">
           <p
-            className="text-sm text-muted-foreground"
+            className="text-md text-muted-foreground"
             style={{ animation: "rise-in 0.6s ease-out 0.1s both" }}
           >
-            Aerith Global
+            AERITH GLOBAL
           </p>
           <h1
             className="mt-4 font-heading text-4xl leading-[1.1] tracking-tight text-foreground md:text-5xl"

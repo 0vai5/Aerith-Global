@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const links = [
@@ -73,50 +74,65 @@ export function Navbar() {
           className="flex h-9 w-9 items-center justify-center rounded-md border border-border md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="relative block h-3.5 w-4">
-            <span
-              className={`absolute left-0 top-0 h-[1.5px] w-full bg-foreground transition-transform ${
-                open ? "translate-y-[6.5px] rotate-45" : ""
+          <span className="relative block h-5 w-5">
+            <Menu
+              aria-hidden="true"
+              className={`absolute inset-0 transition-all duration-200 ${
+                open
+                  ? "rotate-90 scale-0 opacity-0"
+                  : "rotate-0 scale-100 opacity-100"
               }`}
+              size={20}
+              strokeWidth={2}
             />
-            <span
-              className={`absolute left-0 top-1/2 h-[1.5px] w-full -translate-y-1/2 bg-foreground transition-opacity ${
-                open ? "opacity-0" : "opacity-100"
+            <X
+              aria-hidden="true"
+              className={`absolute inset-0 transition-all duration-200 ${
+                open
+                  ? "rotate-0 scale-100 opacity-100"
+                  : "-rotate-90 scale-0 opacity-0"
               }`}
-            />
-            <span
-              className={`absolute bottom-0 left-0 h-[1.5px] w-full bg-foreground transition-transform ${
-                open ? "translate-y-[6.5px] -rotate-45" : ""
-              }`}
+              size={20}
+              strokeWidth={2}
             />
           </span>
         </button>
       </div>
 
       {/* Mobile menu panel */}
-      {open && (
-        <nav className="flex flex-col gap-1 border-t border-border px-6 py-4 md:hidden">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+      <nav
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+        aria-hidden={!open}
+        className={`flex w-full flex-col gap-1 overflow-hidden bg-background transition-[max-height,opacity] duration-300 ease-out md:hidden ${
+          open
+            ? "max-h-96 border-t border-border px-6 py-4 opacity-100"
+            : "pointer-events-none max-h-0 opacity-0"
+        }`}
+      >
+        {links.map((link) => (
           <Link
-            href="#contact"
-            className="mt-2 rounded-md bg-primary px-5 py-2 text-center text-sm font-medium text-primary-foreground"
+            key={link.href}
+            href={link.href}
+            tabIndex={open ? 0 : -1}
+            className="py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             onClick={() => setOpen(false)}
           >
-            Request a quote
+            {link.label}
           </Link>
-        </nav>
-      )}
+        ))}
+        <Link
+          href="#contact"
+          tabIndex={open ? 0 : -1}
+          className="mt-2 rounded-md bg-primary px-5 py-2 text-center text-sm font-medium text-primary-foreground"
+          onClick={() => setOpen(false)}
+        >
+          Request a quote
+        </Link>
+      </nav>
     </header>
   );
 }
