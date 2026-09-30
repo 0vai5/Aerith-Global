@@ -61,7 +61,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="#contact"
+            href="/quote"
             className="rounded-md bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
           >
             Request a quote
@@ -125,7 +125,7 @@ export function Navbar() {
           </Link>
         ))}
         <Link
-          href="#contact"
+          href="/quote"
           tabIndex={open ? 0 : -1}
           className="mt-2 rounded-md bg-primary px-5 py-2 text-center text-sm font-medium text-primary-foreground"
           onClick={() => setOpen(false)}

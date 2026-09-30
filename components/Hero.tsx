@@ -29,7 +29,7 @@ export function Hero() {
             style={{ animation: "rise-in 0.6s ease-out 0.55s both" }}
           >
             <Link
-              href="#contact"
+              href="/quote"
               className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
             >
               Request a quote
