@@ -54,72 +54,72 @@
   --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 
   /* Aerith Global brand tokens — cool off-white, navy ink, brand blue, one amber accent */
-  --background: #F6F7FB;
-  --foreground: #0B1345;
-  --card: #FFFFFF;
-  --card-foreground: #0B1345;
-  --popover: #FFFFFF;
-  --popover-foreground: #0B1345;
-  --primary: #4F6EF5;
-  --primary-foreground: #FFFFFF;
-  --secondary: #EDEFF7;
-  --secondary-foreground: #0B1345;
-  --muted: #EDEFF7;
-  --muted-foreground: #5C6B9E;
-  --accent: #F5A623;
-  --accent-foreground: #0B1345;
+  --background: #f6f7fb;
+  --foreground: #0b1345;
+  --card: #ffffff;
+  --card-foreground: #0b1345;
+  --popover: #ffffff;
+  --popover-foreground: #0b1345;
+  --primary: #4f6ef5;
+  --primary-foreground: #ffffff;
+  --secondary: #edeff7;
+  --secondary-foreground: #0b1345;
+  --muted: #edeff7;
+  --muted-foreground: #5c6b9e;
+  --accent: #f5a623;
+  --accent-foreground: #0b1345;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #E1E4F0;
-  --input: #E1E4F0;
-  --ring: #4F6EF5;
-  --chart-1: #4F6EF5;
-  --chart-2: #5C6B9E;
-  --chart-3: #F5A623;
-  --chart-4: #0B1345;
-  --chart-5: #8891C4;
+  --border: #e1e4f0;
+  --input: #e1e4f0;
+  --ring: #4f6ef5;
+  --chart-1: #4f6ef5;
+  --chart-2: #5c6b9e;
+  --chart-3: #f5a623;
+  --chart-4: #0b1345;
+  --chart-5: #8891c4;
   --radius: 0.625rem;
-  --sidebar: #FFFFFF;
-  --sidebar-foreground: #0B1345;
-  --sidebar-primary: #4F6EF5;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #EDEFF7;
-  --sidebar-accent-foreground: #0B1345;
-  --sidebar-border: #E1E4F0;
-  --sidebar-ring: #4F6EF5;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0b1345;
+  --sidebar-primary: #4f6ef5;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #edeff7;
+  --sidebar-accent-foreground: #0b1345;
+  --sidebar-border: #e1e4f0;
+  --sidebar-ring: #4f6ef5;
 }
 
 .dark {
-  --background: #0A0E27;
-  --foreground: #F6F7FB;
-  --card: #10163B;
-  --card-foreground: #F6F7FB;
-  --popover: #10163B;
-  --popover-foreground: #F6F7FB;
-  --primary: #6C87FF;
-  --primary-foreground: #0A0E27;
-  --secondary: #141A3D;
-  --secondary-foreground: #F6F7FB;
-  --muted: #141A3D;
-  --muted-foreground: #8891C4;
-  --accent: #F5A623;
-  --accent-foreground: #0A0E27;
+  --background: #0a0e27;
+  --foreground: #f6f7fb;
+  --card: #10163b;
+  --card-foreground: #f6f7fb;
+  --popover: #10163b;
+  --popover-foreground: #f6f7fb;
+  --primary: #6c87ff;
+  --primary-foreground: #0a0e27;
+  --secondary: #141a3d;
+  --secondary-foreground: #f6f7fb;
+  --muted: #141a3d;
+  --muted-foreground: #8891c4;
+  --accent: #f5a623;
+  --accent-foreground: #0a0e27;
   --destructive: oklch(0.704 0.191 22.216);
   --border: rgba(255, 255, 255, 0.1);
   --input: rgba(255, 255, 255, 0.15);
-  --ring: #6C87FF;
-  --chart-1: #6C87FF;
-  --chart-2: #8891C4;
-  --chart-3: #F5A623;
-  --chart-4: #F6F7FB;
-  --chart-5: #4F6EF5;
-  --sidebar: #10163B;
-  --sidebar-foreground: #F6F7FB;
-  --sidebar-primary: #6C87FF;
-  --sidebar-primary-foreground: #0A0E27;
-  --sidebar-accent: #141A3D;
-  --sidebar-accent-foreground: #F6F7FB;
+  --ring: #6c87ff;
+  --chart-1: #6c87ff;
+  --chart-2: #8891c4;
+  --chart-3: #f5a623;
+  --chart-4: #f6f7fb;
+  --chart-5: #4f6ef5;
+  --sidebar: #10163b;
+  --sidebar-foreground: #f6f7fb;
+  --sidebar-primary: #6c87ff;
+  --sidebar-primary-foreground: #0a0e27;
+  --sidebar-accent: #141a3d;
+  --sidebar-accent-foreground: #f6f7fb;
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #6C87FF;
+  --sidebar-ring: #6c87ff;
 }
 
 @keyframes flight-path-draw {
@@ -157,6 +157,11 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 }
 
