@@ -37,14 +37,14 @@ export function Navbar() {
         {/* Mobile logo — placeholder until the mobile mark is provided */}
         <Link
           href="/"
-          className="flex items-center gap-2 md:hidden"
+          className="flex items-center justify-between gap-2 md:hidden"
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/aerith-icon-wordmark.png"
+            src="/aerith-icon.png"
             alt="Aerith Global"
-            width={40}
-            height={40}
+            width={180}
+            height={180}
             priority
           />
         </Link>

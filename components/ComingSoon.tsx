@@ -21,7 +21,7 @@ export default function ComingSoon() {
           className="text-sm font-medium tracking-wide text-muted-foreground"
           style={{ animation: "rise-in 0.6s ease-out 0.1s both" }}
         >
-          AERITH GLOBAL
+          aerith global
         </p>
         <h1
           className="mt-4 font-heading text-4xl leading-[1.15] tracking-tight text-foreground md:text-5xl"

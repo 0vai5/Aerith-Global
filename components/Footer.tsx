@@ -32,7 +32,7 @@ export function Footer() {
           </nav>
         </div>
         <p className="mt-8 text-sm text-background/50">
-          © {new Date().getFullYear()} Aerith Global. Perspective so fresh,
+          © {new Date().getFullYear()} aerith global. Perspective so fresh,
           it soars.
         </p>
       </div>
