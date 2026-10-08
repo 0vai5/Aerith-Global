@@ -88,7 +88,7 @@
   --sidebar-ring: #4f6ef5;
 }
 
-.dark {
+/* .dark {
   --background: #0a0e27;
   --foreground: #f6f7fb;
   --card: #10163b;
@@ -120,7 +120,7 @@
   --sidebar-accent-foreground: #f6f7fb;
   --sidebar-border: rgba(255, 255, 255, 0.1);
   --sidebar-ring: #6c87ff;
-}
+} */
 
 @keyframes flight-path-draw {
   to {
