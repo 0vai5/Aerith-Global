@@ -109,10 +109,10 @@ export function QuoteForm() {
         <div className="space-y-2">
           <Label htmlFor="category">Category</Label>
           <Select value={category} onValueChange={setCategory}>
-            <SelectTrigger id="category">
+            <SelectTrigger id="category" className="w-full!">
               <SelectValue placeholder="Select a category" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="min-w-64!">
               {categories.map((c) => (
                 <SelectItem key={c.slug} value={c.slug}>
                   {c.label}
@@ -124,10 +124,10 @@ export function QuoteForm() {
         <div className="space-y-2">
           <Label htmlFor="urgency">Timeline</Label>
           <Select value={urgency} onValueChange={setUrgency}>
-            <SelectTrigger id="urgency">
+            <SelectTrigger id="urgency" className="w-full!">
               <SelectValue />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="min-w-64!">
               <SelectItem value="standard">Standard</SelectItem>
               <SelectItem value="urgent">Urgent / AOG</SelectItem>
             </SelectContent>

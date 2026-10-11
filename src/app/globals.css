@@ -49,6 +49,8 @@
 }
 
 :root {
+  color-scheme: light;
+
   /* Fallback stacks until next/font is wired up in layout.tsx (see notes) */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
@@ -174,5 +176,50 @@
 @keyframes beam-move {
   to {
     stroke-dashoffset: -1400;
+  }
+}
+
+/* Tile hover — shared by Pillars, Process, Industries */
+.tile {
+  --tile-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translate3d(0, 0, 0);
+  box-shadow: 0 0 0 0 rgb(79 110 245 / 0);
+  transition:
+    transform 0.55s var(--tile-ease),
+    box-shadow 0.55s var(--tile-ease),
+    border-color 0.4s ease,
+    background-color 0.4s ease;
+  will-change: transform;
+}
+
+.tile:hover {
+  transform: translate3d(0, -4px, 0);
+  border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+  background-color: var(--card);
+  box-shadow: 0 16px 32px -14px rgb(79 110 245 / 0.28);
+}
+
+.tile:active {
+  transform: translate3d(0, -2px, 0);
+  transition-duration: 0.15s;
+}
+
+.tile-icon {
+  transition: transform 0.55s var(--tile-ease);
+}
+
+.tile:hover .tile-icon {
+  transform: translateY(-1px) scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile,
+  .tile-icon {
+    transition: none;
+  }
+  .tile:hover,
+  .tile:active,
+  .tile:hover .tile-icon {
+    transform: none;
   }
 }

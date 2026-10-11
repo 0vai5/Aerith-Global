@@ -36,13 +36,16 @@ export function Industries() {
           Industries that depend on getting it right the first time.
         </h2>
       </div>
-      <div className="mt-14 grid gap-8 sm:grid-cols-2">
+      <div className="mt-14 grid gap-6 sm:grid-cols-2">
         {industries.map(({ icon: Icon, title, body }) => (
           <div
             key={title}
-            className="rounded-lg border border-border bg-card p-6"
+            className="tile rounded-lg border border-border bg-card p-6"
           >
-            <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} />
+            <Icon
+              className="tile-icon h-5 w-5 text-primary"
+              strokeWidth={1.75}
+            />
             <h3 className="mt-4 font-heading text-lg text-foreground">
               {title}
             </h3>

@@ -27,10 +27,16 @@ export function Pillars() {
           Built for procurement teams who can&apos;t afford surprises.
         </h2>
       </div>
-      <div className="mt-14 grid gap-10 md:grid-cols-3">
+      <div className="mt-14 grid gap-6 md:grid-cols-3">
         {pillars.map(({ icon: Icon, title, body }) => (
-          <div key={title} className="border-t border-border pt-6">
-            <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} />
+          <div
+            key={title}
+            className="tile rounded-lg border border-border bg-card/50 p-6"
+          >
+            <Icon
+              className="tile-icon h-5 w-5 text-primary"
+              strokeWidth={1.75}
+            />
             <h3 className="mt-4 font-heading text-xl text-foreground">
               {title}
             </h3>

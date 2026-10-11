@@ -23,10 +23,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section
-      id="process"
-      className="border-t border-border bg-secondary/40"
-    >
+    <section id="process" className="border-t border-border bg-secondary/40">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="max-w-2xl">
           <p className="text-sm font-medium text-primary">How we work</p>
@@ -34,10 +31,13 @@ export function Process() {
             A process built around accountability at every step.
           </h2>
         </div>
-        <div className="mt-14 grid gap-10 md:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 md:grid-cols-4">
           {steps.map((step) => (
-            <div key={step.number}>
-              <span className="font-heading text-sm text-muted-foreground">
+            <div
+              key={step.number}
+              className="tile group rounded-lg border border-border bg-card p-6"
+            >
+              <span className="font-heading text-sm text-muted-foreground transition-colors duration-300 group-hover:text-primary">
                 {step.number}
               </span>
               <h3 className="mt-2 font-heading text-lg text-foreground">

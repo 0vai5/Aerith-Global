@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   Geist,
   Geist_Mono,
@@ -9,6 +9,11 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const viewport: Viewport = {
+  colorScheme: "light",
+  themeColor: "#F6F7FB",
+};
 
 const playfairDisplayHeading = Playfair_Display({
   subsets: ["latin"],
