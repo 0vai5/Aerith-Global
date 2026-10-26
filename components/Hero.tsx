@@ -54,7 +54,7 @@ export function Hero() {
             className="mt-6 max-w-lg text-lg text-muted-foreground"
             style={{ animation: "rise-in 0.6s ease-out 0.4s both" }}
           >
-            Verified aerospace and industrial parts, sourced and delivered
+            Verified aerospace and industrial parts, manufactured and delivered
             with the traceability and speed that keep fleets moving.
           </p>
           <div

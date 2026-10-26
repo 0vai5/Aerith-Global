@@ -20,11 +20,11 @@ const faqs = [
   {
     q: "Do you supply parts with traceability documentation?",
     // TODO: confirm which documents Aerith can actually provide (certificates of conformity, release certificates, etc.)
-    a: "Yes. We source from verified origins and each shipment is supported by the paperwork your quality team needs. Tell us your documentation requirements when you request a quote.",
+    a: "Yes. We manufacture and each shipment is supported by the paperwork your quality team needs. Tell us your documentation requirements when you request a quote.",
   },
   {
-    q: "Can you source parts that are hard to find or obsolete?",
-    a: "Often, yes. Our sourcing network spans multiple regions, so send us the part number and we will tell you what is available before you commit to anything.",
+    q: "Can you manufacture parts that are hard to find or obsolete?",
+    a: "Often, yes. Our manufacturing capabilities span multiple regions, so send us the part number and we will tell you what is available before you commit to anything.",
   },
   {
     q: "Which industries do you serve?",

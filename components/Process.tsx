@@ -6,8 +6,8 @@ const steps = [
   },
   {
     number: "02",
-    title: "Sourcing & verification",
-    body: "We trace the part to a verified source and confirm certification, batch, and condition against your requirement.",
+    title: "Manufacturing & verification",
+    body: "We trace the part to the verification team and confirm certification, batch, and condition against your requirement.",
   },
   {
     number: "03",

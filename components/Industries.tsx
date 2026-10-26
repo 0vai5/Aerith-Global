@@ -8,7 +8,7 @@ const industries = [
   {
     icon: Plane,
     title: "Commercial Aviation",
-    body: "Airline operators sourcing verified parts to keep aircraft flying on schedule.",
+    body: "Airline operators manufacturing verified parts to keep aircraft flying on schedule.",
   },
   {
     icon: Wrench,
