@@ -30,13 +30,13 @@ export function Hero() {
         )}
 
         {/* Legibility overlay: solid wash on mobile, left-to-right fade on desktop */}
-        <div className="absolute inset-0 bg-background/80 md:bg-transparent md:bg-gradient-to-r md:from-background md:via-background/80 md:to-background/10" />
+        <div className="absolute inset-0 bg-background/80 md:bg-transparent md:bg-linear-to-r md:from-background md:via-background/80 md:to-background/10" />
 
         {/* Blend into the next section */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-background to-transparent" />
       </div>
 
-      <div className="relative z-20 mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-20 md:min-h-[600px] md:justify-center md:pt-28">
+      <div className="relative z-20 mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-20 md:min-h-150 md:justify-center md:pt-28">
         <div className="max-w-2xl">
           <p
             className="text-md text-muted-foreground"
