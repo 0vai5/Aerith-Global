@@ -5,9 +5,8 @@ import { useEffect, useRef } from "react";
 type Props = { mp4: string; webm?: string };
 
 /**
- * Decorative background video. It only loads and plays when it's appropriate:
- * desktop width, no reduced-motion preference, no data-saver mode.
- * Otherwise the server-rendered poster image in Hero stays as the static background.
+ * Decorative background video. It only loads and plays when motion and network
+ * settings allow it. Otherwise the static hero background remains visible.
  */
 export function HeroVideo({ mp4, webm }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -19,12 +18,11 @@ export function HeroVideo({ mp4, webm }: Props) {
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
-    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
     const connection = (
       navigator as Navigator & { connection?: { saveData?: boolean } }
     ).connection;
 
-    if (reduceMotion || !isDesktop || connection?.saveData) return;
+    if (reduceMotion || connection?.saveData) return;
 
     // Gentle crossfade from the poster once frames are actually playing
     const onPlaying = () => {
