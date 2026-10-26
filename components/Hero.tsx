@@ -1,13 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
 import { HeroVideo } from "@/components/HeroVideo";
 
-type HeroMedia = { mp4: string; webm?: string; poster: string };
+type HeroMedia = { mp4: string };
 
 // PLACEHOLDER: no video yet. When the client's footage is ready, replace
 // `null` with:
 // { mp4: "/video/hero.mp4", webm: "/video/hero.webm", poster: "/video/hero-poster.jpg" }
-const HERO_MEDIA = { mp4: "/video.mp4", webm: "/video.mp4", poster: "/video.mp4" } as HeroMedia | null;
+const HERO_MEDIA = { mp4: "/video.mp4" } as HeroMedia | null;
 
 export function Hero() {
   return (
@@ -16,15 +15,7 @@ export function Hero() {
       <div className="absolute inset-0 -z-10" aria-hidden="true">
         {HERO_MEDIA ? (
           <>
-            <Image
-              src={HERO_MEDIA.poster}
-              alt=""
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
-            <HeroVideo mp4={HERO_MEDIA.mp4} webm={HERO_MEDIA.webm} />
+            <HeroVideo mp4={HERO_MEDIA.mp4} />
           </>
         ) : (
           <>
