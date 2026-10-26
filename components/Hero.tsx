@@ -1,9 +1,51 @@
+import Image from "next/image";
 import Link from "next/link";
+import { HeroVideo } from "@/components/HeroVideo";
+
+type HeroMedia = { mp4: string; webm?: string; poster: string };
+
+// PLACEHOLDER: no video yet. When the client's footage is ready, replace
+// `null` with:
+// { mp4: "/video/hero.mp4", webm: "/video/hero.webm", poster: "/video/hero-poster.jpg" }
+const HERO_MEDIA = { mp4: "/video.mp4", webm: "/video.mp4", poster: "/video.mp4" } as HeroMedia | null;
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-border">
-      <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-20 md:pt-28">
+    <section className="relative isolate overflow-hidden border-b border-border">
+      {/* Background media layer */}
+      <div className="absolute inset-0 -z-10" aria-hidden="true">
+        {HERO_MEDIA ? (
+          <>
+            <Image
+              src={HERO_MEDIA.poster}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <HeroVideo mp4={HERO_MEDIA.mp4} webm={HERO_MEDIA.webm} />
+          </>
+        ) : (
+          <>
+            {/* Placeholder: soft brand-blue glow where the video will sit */}
+            <div className="absolute inset-0 bg-[radial-gradient(60%_90%_at_78%_35%,color-mix(in_srgb,var(--primary)_16%,transparent),transparent)]" />
+            {process.env.NODE_ENV !== "production" && (
+              <div className="absolute bottom-6 right-6 hidden rounded-md border border-dashed border-primary/40 bg-background/70 px-4 py-3 text-xs text-muted-foreground backdrop-blur md:block">
+                Hero video placeholder · 1920×1080 · 8–12s seamless loop
+              </div>
+            )}
+          </>
+        )}
+
+        {/* Legibility overlay: solid wash on mobile, left-to-right fade on desktop */}
+        <div className="absolute inset-0 bg-background/80 md:bg-transparent md:bg-gradient-to-r md:from-background md:via-background/80 md:to-background/10" />
+
+        {/* Blend into the next section */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
+      </div>
+
+      <div className="relative z-20 mx-auto flex max-w-6xl flex-col gap-16 px-6 pb-24 pt-20 md:min-h-[600px] md:justify-center md:pt-28">
         <div className="max-w-2xl">
           <p
             className="text-md text-muted-foreground"
@@ -44,9 +86,10 @@ export function Hero() {
         </div>
       </div>
 
-      <svg
+      {/* Flight path: draws once, sits above the video and below the text */}
+      {/* <svg
         viewBox="0 0 1200 400"
-        className="pointer-events-none absolute inset-0 h-full w-full"
+        className="pointer-events-none absolute inset-0 z-10 h-full w-full"
         preserveAspectRatio="xMidYMid slice"
         aria-hidden="true"
       >
@@ -60,7 +103,7 @@ export function Hero() {
           strokeDashoffset="1400"
           style={{ animation: "flight-path-draw 1.8s ease-out 0.3s forwards" }}
         />
-      </svg>
+      </svg> */}
     </section>
   );
 }
