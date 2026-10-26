@@ -34,7 +34,7 @@ const faqs = [
   {
     q: "Do you ship internationally?",
     // TODO: confirm shipping regions and who handles customs
-    a: "Yes. We ship from Karachi and manage customs and freight as one continuous chain, so you deal with a single point of contact from order to delivery.",
+    a: "Yes. We ship from The USA and manage customs and freight as one continuous chain, so you deal with a single point of contact from order to delivery.",
   },
   {
     q: "Is there a minimum order quantity?",

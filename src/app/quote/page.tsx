@@ -2,9 +2,9 @@ import { Suspense } from "react";
 import { QuoteForm } from "@/components/QuoteForm";
 
 export const metadata = {
-  title: "Request a Quote — Aerith Global",
+  title: "Request a Quote — aerith global LLC.",
   description:
-    "Send Aerith Global your part number, quantity and timeline and we'll get back to you with sourcing options.",
+    "Send aerith global LLC. your part number, quantity and timeline and we'll get back to you with sourcing options.",
 };
 
 export default function QuotePage() {

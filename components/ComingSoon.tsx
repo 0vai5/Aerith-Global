@@ -8,7 +8,7 @@ export default function ComingSoon() {
       <header className="relative z-10 mx-auto flex w-full max-w-6xl items-center px-6 py-8">
         <Image
           src="/aerith-icon.png"
-          alt="Aerith Global"
+          alt="aerith global"
           width={200}
           height={200}
           priority
@@ -21,7 +21,7 @@ export default function ComingSoon() {
           className="text-sm font-medium tracking-wide text-muted-foreground"
           style={{ animation: "rise-in 0.6s ease-out 0.1s both" }}
         >
-          aerith global
+          aerith global LLC.
         </p>
         <h1
           className="mt-4 font-heading text-4xl leading-[1.15] tracking-tight text-foreground md:text-5xl"
@@ -33,7 +33,7 @@ export default function ComingSoon() {
           className="mt-6 max-w-md text-lg text-muted-foreground"
           style={{ animation: "rise-in 0.6s ease-out 0.4s both" }}
         >
-          We&apos;re building a new home for Aerith Global&apos;s aerospace
+          We&apos;re building a new home for aerith global LLC.&apos;s aerospace
           and industrial parts sourcing. Perspective so fresh, it soars —
           landing soon.
         </p>
@@ -61,7 +61,7 @@ export default function ComingSoon() {
       </div>
 
       <footer className="relative z-10 mx-auto w-full max-w-6xl px-6 py-8 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} Aerith Global. All rights reserved.
+        © {new Date().getFullYear()} aerith global LLC. All rights reserved.
       </footer>
 
       {/* Flight path — single draw-in on load, then a beam loops along it once revealed */}

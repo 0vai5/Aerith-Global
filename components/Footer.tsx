@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
                   href="https://wa.me/923032354439"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Chat with Aerith Global on WhatsApp"
+                  aria-label="Chat with aerith global LLC. on WhatsApp"
                   className="flex items-center gap-3 transition-colors hover:text-primary"
                 >
                   <Image
@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-background/15 pt-6 text-sm text-background/50 md:flex-row">
           <p>
-            © {new Date().getFullYear()} Aerith Global. All rights reserved.
+            © {new Date().getFullYear()} aerith global LLC. All rights reserved.
           </p>
           <button
             onClick={scrollToTop}

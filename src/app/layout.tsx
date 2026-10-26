@@ -33,9 +33,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aerith Global — Perspective So Fresh, It Soars",
+  title: "aerith global LLC. — Perspective So Fresh, It Soars",
   description:
-    "Aerith Global sources and supplies aerospace and industrial parts with verified traceability and global logistics.",
+    "aerith global LLC. sources and supplies aerospace and industrial parts with verified traceability and global logistics.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

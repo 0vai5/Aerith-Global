@@ -27,7 +27,7 @@ export function Navbar() {
         >
           <Image
             src="/aerith-icon.png"
-            alt="Aerith Global"
+            alt="aerith global LLC."
             width={200}
             height={200}
             priority
@@ -42,7 +42,7 @@ export function Navbar() {
         >
           <Image
             src="/aerith-icon.png"
-            alt="Aerith Global"
+            alt="aerith global LLC."
             width={180}
             height={180}
             priority

@@ -12,12 +12,12 @@ const steps = [
   {
     number: "03",
     title: "Quality assurance",
-    body: "Every part is inspected against spec before it ships — not discovered as a problem after it lands.",
+    body: "Every part is inspected against spec before it ships, not discovered as a problem after it lands.",
   },
   {
     number: "04",
     title: "Delivery & logistics",
-    body: "Customs and freight are handled as one continuous chain, from Karachi to wherever your fleet operates.",
+    body: "Customs and freight are handled as one continuous chain, from The USA to wherever your fleet operates.",
   },
 ];
 

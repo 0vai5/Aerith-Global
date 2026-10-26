@@ -4,7 +4,7 @@ const pillars = [
   {
     icon: Search,
     title: "Sourcing",
-    body: "Every part is traced back to a verified origin — so what arrives has the paperwork to back it up, not just the label.",
+    body: "Every part is traced back to a verified origin, so what arrives has the paperwork to back it up, not just the label.",
   },
   {
     icon: ShieldCheck,
@@ -14,7 +14,7 @@ const pillars = [
   {
     icon: Globe,
     title: "Global logistics",
-    body: "From Karachi to wherever your fleet operates, customs and freight move as one continuous, tracked chain.",
+    body: "From The USA to wherever your fleet operates, customs and freight move as one continuous, tracked chain.",
   },
 ];
 
